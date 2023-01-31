@@ -1,6 +1,24 @@
-<h1>User info</h1>
+<main>
 
-<h1>New book</h1>
+
+
+<h2>User info</h2>
+  <%= image_tag 'sample-author1.jpg' %>
+  <table>
+    <tbody>
+      <tr></tr>
+      <tr>
+        <th>name</th>
+        <th><%= current_user.name %></th>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <th><%= current_user.introduction %></th>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>New book</h2>
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
     <div>
@@ -18,3 +36,5 @@
     </div>
 
    <% end %>
+</main>
+
