@@ -61,7 +61,7 @@
               <td><%= link_to 'Edit', edit_book_path(book) %></td>
               <td>
                 <% if @book.user == current_user %>
-                  <%= link_to 'Destroy', book_path(book), method: :delete, data: { confirm: '本当に消しますか?' } %>
+                  <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } %>
                 <% end %>
               </td>
             </tr>
