@@ -54,12 +54,12 @@
         <tbody>
           <% @books.each do |book| %>
             <tr>
-              <%= image_tag book.get_image %>
-              <td><%= current_user.name %><%= image_tag 'sample-author1.jpg' %></td>
+
+              <td><%= image_tag 'sample-author1.jpg' %><br></%><%= current_user.name %></td>
               <td><%= book.title %></td>
               <td><%= book.body %></td>
               <td><%= link_to 'Edit', edit_book_path(book) %></td>
-              
+
             </tr>
           <% end %>
         </tbody>
