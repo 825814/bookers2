@@ -3,7 +3,7 @@
 
     <div class="col-md-3" style="background-color: orange;">
       <h2>User info</h2>
-      <%= image_tag 'sample-author1.jpg' %>
+      <%= image_tag @book.user.get_profile_image(100,100) %>
       <table>
         <tbody>
           <tr></tr>
@@ -54,8 +54,12 @@
         <tbody>
           <% @books.each do |book| %>
             <tr>
-
-              <td><%= image_tag 'sample-author1.jpg' %><br></%><%= current_user.name %></td>
+              <td>
+                <%= link_to user_path do %>
+                  <%= image_tag @book.user.get_profile_image(100,100) %>
+                  <%= @book.user.name %>
+                <% end %>
+              </td>
               <td><%= book.title %></td>
               <td><%= book.body %></td>
               <td><%= link_to 'Edit', edit_book_path(book) %></td>

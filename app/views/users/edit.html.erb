@@ -1,6 +1,6 @@
 <h2>User info</h2>
 
-<%= form_for(@user) do |f| %>
+<%= form_with model: @user do |f| %>
 
   <div class="field">
     <%= f.label :Name %>
@@ -9,12 +9,12 @@
 
   <div class="field">
     <%= f.label :Image %>
-    <%= f.file_field :profile_image, id: :user_image %>
+    <%= f.file_field :profile_image, id: :user_profile_image %>
   </div>
 
   <div class="field">
     <%= f.label :Introduction %>
-    <%= f.text_area :introduction, id: :user_body %>
+    <%= f.text_area :introduction, id: :user_introduction %>
   </div>
 
   <div class="actions">
