@@ -20,7 +20,7 @@
 
 
       <h2>New book</h2>
-      <%= form_with model: @book, method: :post do |f| %>
+      <%= form_with model: @book_new, url: books_path, method: :post do |f| %>
 
         <div>
           <%= f.label :title %><br>
@@ -33,7 +33,7 @@
         </div>
 
         <div>
-          <%= link_to 'Create Book' %>
+          <%= f.submit 'Create Book', class:"btn btn-success" %>
         </div>
 
       <% end %>
@@ -52,24 +52,24 @@
         </thead>
 
         <tbody>
-          <% @books.each do |book| %>
+
             <tr>
               <td>
                 <%= link_to user_path do %>
-                  <%= image_tag book.user.get_profile_image(100,100) %>
-                  <%= book.user.name %>
+                  <%= image_tag @book.user.get_profile_image(100,100) %>
+                  <%= @book.user.name %>
                 <% end %>
               </td>
-              <td><%= book.title %></td>
-              <td><%= book.body %></td>
-              <td><%= link_to 'Edit', edit_book_path(book) %></td>
+              <td><%= @book.title %></td>
+              <td><%= @book.body %></td>
+              <td><%= link_to 'Edit', edit_book_path(@book) %></td>
               <td>
                 <% if @book.user == current_user %>
                   <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } %>
                 <% end %>
               </td>
             </tr>
-          <% end %>
+
         </tbody>
       </table>
     </div>
