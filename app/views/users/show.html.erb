@@ -21,7 +21,7 @@
 
 
       <h2>New book</h2>
-      <%= form_with model: @user, url: '/users/:id', method: :post do |f| %>
+      <%= form_with model: @book, method: :post do |f| %>
 
         <div>
           <%= f.label :title %><br>
@@ -35,7 +35,7 @@
 
         <div>
 
-          <%= f.submit 'Create Book', class:"btn btn-success" %>
+          <%= f.submit 'Create Book' %>
 
         </div>
 
@@ -57,7 +57,7 @@
         <tbody>
           <% @books.each do |book| %>
             <tr>
-              <td><%=image_tag @user.get_profile_image(100,100) %></td>
+              <td><%=image_tag book.get_profile_image(100,100) %></td>
               <td><%= book.title %></td>
               <td><%= book.body %></td>
             </tr>

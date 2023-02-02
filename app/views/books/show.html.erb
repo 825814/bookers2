@@ -9,18 +9,18 @@
           <tr></tr>
           <tr>
             <th>name</th>
-            <th><%= current_user.name %></th>
+            <th><%= @book.user.name %></th>
           </tr>
           <tr>
            <th>introduction</th>
-           <th><%= current_user.introduction %></th>
+           <th><%= @book.user.introduction %></th>
           </tr>
         </tbody>
       </table>
 
 
       <h2>New book</h2>
-      <%= form_with model: @book, url: '/books', method: :post do |f| %>
+      <%= form_with model: @book, method: :post do |f| %>
 
         <div>
           <%= f.label :title %><br>
@@ -33,7 +33,7 @@
         </div>
 
         <div>
-          <%= link_to 'Create Book', books_path %>
+          <%= link_to 'Create Book' %>
         </div>
 
       <% end %>
@@ -56,8 +56,8 @@
             <tr>
               <td>
                 <%= link_to user_path do %>
-                  <%= image_tag @book.user.get_profile_image(100,100) %>
-                  <%= @book.user.name %>
+                  <%= image_tag book.user.get_profile_image(100,100) %>
+                  <%= book.user.name %>
                 <% end %>
               </td>
               <td><%= book.title %></td>

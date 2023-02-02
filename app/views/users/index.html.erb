@@ -3,25 +3,25 @@
 
     <div class="col-md-3" style="background-color: orange;">
       <h2>User info</h2>
-      <% @users.each do |user| %>
-      <%= image_tag user.get_profile_image(100,100) %>
+
+      <%= image_tag current_user.get_profile_image(100,100) %>
       <table>
         <tbody>
           <tr></tr>
           <tr>
             <th>name</th>
-            <th><%= user.name %></th>
+            <th><%= current_user.name %></th>
           </tr>
           <tr>
            <th>introduction</th>
-           <th><%= user.introduction %></th>
+           <th><%= current_user.introduction %></th>
           </tr>
         </tbody>
       </table>
-      <% end %>
+
 
       <h2>New book</h2>
-      <%= form_with model: @book, url: '/books', method: :post do |f| %>
+      <%= form_with model: @book, method: :post do |f| %>
 
         <div>
           <%= f.label :title %><br>
@@ -34,7 +34,7 @@
         </div>
 
         <div>
-          <%= link_to 'Create Book', books_path %>
+          <%= link_to 'Create Book' %>
         </div>
 
       <% end %>
@@ -55,8 +55,6 @@
         <tbody>
           <% @users.each do |user| %>
             <tr>
-
-
               <td><%= image_tag user.get_profile_image(100,100) %></td>
               <td><%= user.name %></td>
               <td></td>
