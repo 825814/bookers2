@@ -11,6 +11,7 @@
   </head>
 
   <body>
+
     <header>
       <%= link_to root_path do %>
         <span>Bookers</span>
@@ -45,7 +46,8 @@
         </li>
       <% end %>
     </nav>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </body>
