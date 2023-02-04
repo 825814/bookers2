@@ -32,7 +32,7 @@ class BooksController < ApplicationController
     if @book.update(book_params)
     redirect_to book_path(@book.id)
   else
-    edit_book_path
+    render :edit
   end
 end
 
