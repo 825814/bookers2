@@ -20,6 +20,11 @@
         </tbody>
       </table>
 
+      <div class="row">
+        <%= link_to edit_user_path(current_user) do %>
+        　<i class="fa-solid fa-user-gear"></i>
+        <% end %>
+      </div>
 
       <h2>New book</h2>
       <%= form_with model: @book_new, url: books_path, method: :post do |f| %>
@@ -57,7 +62,7 @@
 
             <tr>
               <td>
-                <%= link_to user_path do %>
+                <%= link_to user_path(@book.user.id) do %>
                   <%= image_tag @book.user.get_profile_image(100,100) %>
                   <%= @book.user.name %>
                 <% end %>

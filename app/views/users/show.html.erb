@@ -22,6 +22,11 @@
         </tbody>
       </table>
 
+      <div class="row">
+        <%= link_to edit_user_path(current_user) do %>
+        　<i class="fa-solid fa-user-gear"></i>
+        <% end %>
+      </div>
 
 　　　<h2>New book</h2>
       <%= form_with model: @book_new, url: books_path, method: :post do |f| %>
