@@ -30,10 +30,16 @@
               </td>
               <td><%= @book.title %></td>
               <td><%= @book.body %></td>
-              <td><%= link_to 'Edit', edit_book_path(@book) %></td>
+              <td>
+                <%= link_to edit_book_path(@book) do %>
+                <button type="button" class="btn btn-success">Edit</button>
+                <% end %>
+              </td>
               <td>
                 <% if @book.user == current_user %>
-                  <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } %>
+                  <%= link_to book_path(@book), method: :delete, data: { confirm: '本当に消しますか?' } do %>
+                  <button type="button" class="btn btn-danger">Destroy</button>
+                  <% end %>
                 <% end %>
               </td>
             </tr>
