@@ -7,30 +7,34 @@
   </ul>
 <% end %>
 
+<div class="container">
+  <div class="row">
+    <div class="mx-auto">
+      <h2>User info</h2>
 
-<h2>User info</h2>
+      <%= form_with model: @user do |f| %>
 
-<%= form_with model: @user do |f| %>
+        <div class="field">
+          <%= f.label :Name %><br>
+          <%= f.text_field :name, id: :user_name %>
+        </div>
 
-  <div class="field">
-    <%= f.label :Name %>
-    <%= f.text_field :name, id: :user_name %>
+        <div class="field">
+          <%= f.label :Image %><br>
+          <%= f.file_field :profile_image, id: :user_profile_image %>
+        </div>
+
+        <div class="field">
+          <%= f.label :Introduction %><br>
+          <%= f.text_area :introduction, id: :user_introduction %>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-secondary">Update User</button>
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :Image %>
-    <%= f.file_field :profile_image, id: :user_profile_image %>
-  </div>
 
-  <div class="field">
-    <%= f.label :Introduction %>
-    <%= f.text_area :introduction, id: :user_introduction %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Show', user_path %> |
-<%= link_to 'Back', users_path %>
