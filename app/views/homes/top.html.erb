@@ -1,25 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto">
+      <h1>
+        welcome to
+        <span><i class="fa fa-book"></i><strong>Bookers</strong></span>
+        !!
+      </h1>
 
-<h1>
-  welcome to
-  <span><i class="fa fa-book"></i><strong>Bookers</strong></span>
-  !!
-</h1>
+      <p>
+        In
+        <span><i class="fa fa-book"></i><strong>Bookers</strong></span>
+        ,
+      </p>
 
-<p>
-  In
-  <span><i class="fa fa-book"></i><strong>Bookers</strong></span>
-  ,
-</p>
+      <p>you can share and exchange your opinions , inpressions , and emotions</p>
 
-<p>you can share and exchange your opinions , inpressions , and emotions</p>
+      <p>about various books!</p>
 
-<p>about various books!</p>
-
-<%= link_to new_user_session_path do %>
-  <button type="button" class="btn btn-info">Log in</button>
-<% end %>
-<br>
-<%= link_to new_user_registration_path do %>
-  <button type="button" class="btn btn-success">Sign up</button>
-<% end %>
-
+      <%= link_to new_user_session_path do %>
+        <button type="button" class="btn btn-info btn-block">Log in</button>
+      <% end %>
+      <br>
+      <%= link_to new_user_registration_path do %>
+        <button type="button" class="btn btn-success btn-block">Sign up</button>
+      <% end %>
+    </div>
+  </div>
+</div>
