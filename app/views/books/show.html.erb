@@ -1,10 +1,10 @@
-
+<p id="notice"></p>
 
 <div class="container">
   <div class="row">
 
     <div class="col-md-3">
-      <%= render 'info', books: @books,user: @book.user %>
+      <%= render 'info', books: @books, user: @book.user %>
     </div>
 
     <div class="col-md-8">
@@ -33,7 +33,7 @@
               <td>
                 <%= link_to edit_book_path(@book) do %>
                   <button type="button" class="btn btn-success">Edit</button>
-                   
+
                 <% end %>
               </td>
               <td>
