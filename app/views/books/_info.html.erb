@@ -17,15 +17,12 @@
   </table>
 
   <div class="row">
-    <% if user == current_user %>
-      <%= link_to edit_user_path(current_user) do %>
+
+      <%= link_to edit_user_path(user.id) do %>
         <button type="button" class="btn btn-outline-secondary btn-block"><i class="fas fa-user-cog text-dark"></i></button>
       <% end %>
-    <% else %>
-      <%= link_to user_path(current_user) do %>
-        <button type="button" class="btn btn-outline-secondary btn-block"><i class="fas fa-user-cog text-dark"></i></button>
-      <% end %>
-    <% end %>
+
+
   </div>
 
 

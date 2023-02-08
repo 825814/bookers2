@@ -31,13 +31,9 @@
               <td><%= @book.title %></td>
               <td><%= @book.body %></td>
               <td>
-
-
                 <% if @book.user == current_user %>
-                  <%= link_to edit_book_path(current_user) do %>
-                  <button type="button" class="btn btn-success">Edit</button>
-                  <% end %>
-                <% end %>
+                   <%= link_to "Edit", edit_book_path, class: "btn btn-success btn-sm " %>
+                   <% end %>
               </td>
               <td>
                 <% if @book.user == current_user %>
